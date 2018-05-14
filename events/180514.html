@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Jack Black - Blogs - Hello World!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../index.html">
+                        Home
+                    </a>
+		<li>
+                    <a href="../events.html">Events</a>
+                </li>
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1 style="font-family:courier;">Hello World!</h1>
+                <h4 style="font-family:courier;">May 14th, 2018 <em>Jack Black</em></h4>
+                <hr>
+                <p>Hello everyone! Welcome to my website.</p>
+
+                <p>This website is born on May 12nd, 2018, and is still under constraction now. <a href="https://github.com/JackRBlack/JackRBlack.github.io" target="_blank">Here is the source code.</a></p>
+
+                <p>I am currently conducting experiments at the <a href="http://www.lightsource.ca/">Canadian Light Source</a>. Here is a photo I took this morning at the entrance of CLS. I hope you enjoy it!</p>
+
+                <img src="../src/DSC_5577-01.jpeg" alt="CLS entrance" width="640" height="360">
+                <hr>
+                <p style="color:MediumSeaGreen">Written & published @Canadian Light Source, 6:50 AM (UTC-06:00)</p>
+
+                <hr>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">See All Events</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
