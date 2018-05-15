@@ -121,3 +121,8 @@ body {
   }
   
 }
+
+p {
+    border: 0px solid powderblue;
+    margin: 20px;
+}
