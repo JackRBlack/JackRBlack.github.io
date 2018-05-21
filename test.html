@@ -62,15 +62,19 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1 style="font-family:courier;">Test Zone</h1>
-                <p style="background-color:Tomato;color:white;text-align:center;font-size:18px;" title="Will come alive soon!"><em>This website is currently under construction.</em></p>
+                <p class="warning" title="Will come alive soon!"><em>This website is currently under construction.</em></p>
                 <a href="https://github.com/JackRBlack/JackRBlack.github.io" target="_blank">Here is the source code.</a>
                 <br>
                 
                 <p style="color:MediumSeaGreen;">This is a zone for code testing.</p>
 
-                <div style="background-color:purple;color:white;padding:20px;">
-                    <h2>London</h2>
-                    <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <h2>Color Box Testing</h2> 
+                <p class="safe">Safe box: London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <p class="warning">Warning box: London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <p class="danger">Danger box: London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+
+                <button onclick="hideBox_safe()">Hide Safe Boxs</button>
+
                 </div>
 
                 <br>
@@ -92,6 +96,16 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    </script>
+
+    <!-- Hide Color Boxs Script -->
+    <script>
+    function hideBox_safe() {
+        var x = document.getElementsByClassName("safe");
+        for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+    }
     </script>
 
 </body>

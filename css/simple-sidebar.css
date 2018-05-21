@@ -122,7 +122,29 @@ body {
   
 }
 
+/* below are added by Jack Black */
+
 p {
     border: 0px solid powderblue;
     margin: 20px;
+}
+
+/* color box */
+
+.warning {
+  background-color: Orange;
+  color: white;
+  padding: 10px
+}
+
+.danger {
+  background-color: Tomato;
+  color: white;
+  padding: 10px
+}
+
+.safe {
+  background-color: Green;
+  color: white;
+  padding: 10px
 }
