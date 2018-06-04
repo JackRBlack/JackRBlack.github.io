@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blogs - CLS - My First Trip to CLS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../../index.html">
+                        Home
+                    </a>
+		            <li>
+                    <a href="../../blogs.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="../../about.html">About</a>
+                    </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <!-- title -->
+                <h1 style="font-family:courier;">Immersive Navigation Bar (沉浸式导航栏)</h1>
+
+                <!-- date & author -->
+                <h4 style="font-family:courier;">Jun 4th, 2018 <em>Jack Black</em></h4>
+
+                <hr>
+
+                <!-- article starts here -->
+                <h3>介绍</h3>
+                <p>所谓沉浸式导航栏，即在app界面不显示（隐藏）导航栏。类似的概念还有“沉浸式状态栏 (immersive status bar)”等。</p>
+
+                <p>想要实现这样的效果，原则上是依赖app开发者的。但是基于国内安卓开发的现状，很多app开发者不遵守安卓开发规范（其实主要是领导给的压力），导致开发出的app用户界面神似iOS版，非常不美观。一个非常明显的特征就是，一直显示的黑色导航栏上方仍然叠加一个底部横向菜单。因此，为了获得更雅致的观感，我们需要手动帮这些app实现沉浸导航栏的效果。</p>
+
+                <h3>测试环境</h3>
+                <p>手机是索尼 Xperia Z5 Dual (E6683)，系统为 Android 7.1.1. PC 为 ThinkPad S5，系统为 Windows 10. 以下实践均基于这个测试环境，不保证能在其他环境下取得相同结果（尽管理论上类原生系统的 7.0 都行）。</p>
+
+                <h3>实现</h3>
+                <p>利用安卓提供的 <code>adb</code> 命令 (Android Debug Bridge)，我们可以在PC端轻松实现上述想法。将手机以 USB debugging 方式连接至电脑，然后在电脑命令行下进入adb的文件夹，用以下代码测试手机是否连接成功：</p>
+
+                <center><code>adb devices</code></center>
+                
+                <p>如果连接成功，会返回如下结果（注意设备号可能不同）：</p>
+                
+                <center>
+                <code>List of devices attached</code>
+                <br>
+                <code>BH900F3V50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device&nbsp;&nbsp;</code>
+                </center>
+
+                <p>然后使用这个命令即可全局沉浸导航栏：</p>
+
+                <center><code>adb shell settings put global policy_control immersive.navigation=*</code></center>
+
+                <p>有时对于某些应用我们并没有沉浸的企图，这时需要对它们给出例外。例如以下代码分别对我的手机的桌面、相机、相册、天气等4个app做出了沉浸取消的例外。其中相机取消沉浸是因为沉浸后相机界面无法直接退出，而另外三个app则是因为不沉浸更加美观。显然，只需要知道对应app的包名就可以轻松对任意app进行这种操作。</p>
+
+                <center><code>adb shell settings put global policy_control immersive.navigation=apps,-com.sonyericsson.home,-com.sonyericsson.android.camera,-com.sonyericsson.album,-com.sonymobile.xperiaweather</code></center>
+
+                <p>如果只想对某几个app做出沉浸修改，我猜想只需要这个命令（但我没有测试）：</p>
+
+                <center><code>adb shell settings put global policy_control immersive.navigation=com.sonymobile.xperiaweather,com.sonyericsson.album</code></center>
+
+                <p>如果需要恢复系统原先的设置，只需键入如下命令即可：</p>
+
+                <center><code>adb shell settings put global policy_control null</code></center>
+
+                <h3>其他</h3>
+                <p>附上全局沉浸状态栏的命令：</p>
+
+                <center><code>adb shell settings put global policy_control immersive.status=*</code></center>
+
+                <p>以及全局全部沉浸的命令：</p>
+
+                <center><code>adb shell settings put global policy_control immersive.full=*</code></center>
+
+                <p>关于 <code>adb</code> 命令的更多神奇用法，我会在未来写新的博客更新，尽情期待。</p>
+		
+                <hr>
+                <p style="color:MediumSeaGreen">Written & published @Peking University, 11：25 PM (UTC+08:00)</p>
+                <hr>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">See All Blogs</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

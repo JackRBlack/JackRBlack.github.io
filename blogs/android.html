@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- 简体中文 -->
+<html lang="zh-cmn-Hans">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BLogs - Android Development</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="../blogs.html">Blogs</a>
+                </li>
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1 style="font-family:courier;">Android Development</h1>
+                <hr>
+                <img src="https://9to5google.files.wordpress.com/2015/10/android-versions.jpg" alt="android-versions" style='height: 100%; width: 100%; object-fit: contain'>
+                <br>
+		        <p style="color:MediumSeaGreen;border: 0px solid;padding: 20px;">
+                这里会放一些日常发现的安卓搞机小trick，以及安卓开发知识。
+                </p>
+
+                <hr>
+                <!-- Below is a menu of all blogs in this content. -->
+                <h3 style="color:Indigo;">Blogs:</h3>
+                <a href="./Android/immersive_navigation_bar.html" target="_blank">2018.06.04 --- <em>Jack Black</em> --- <b>Immersive navigation bar (沉浸式导航栏).</b></a>
+                <hr>
+
+                <!-- the menu toggler -->
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
