@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Jack Black - Projects - physical-constant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- Google code prettify -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../index.html">
+                        Home
+                    </a>
+		<li>
+                    <a href="../projects.html">Projects</a>
+                </li>
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1 style="font-family:courier;">physical-constant</h1>
+                <h4 style="font-family:courier;">Jun 20th, 2018 <em>Jack Black</em></h4>
+                <h6 style="font-family:courier;color:#B6B6B4">A module for physical constant in Python, along with unit conversion feature.</h6>
+                <hr>
+
+                <h2 style="font-family:courier;">Introduction</h2>
+
+                <p>The following definition is extracted from Wikipedia page <a href="https://en.wikipedia.org/wiki/Physical_constant">physical constant</a>:</p>
+
+                <blockquote class="tab">
+                    A physical constant, sometimes fundamental physical constant or universal constant, is a physical quantity that is generally believed to be both universal in nature and have constant value in time. It is contrasted with a mathematical constant, which has a fixed numerical value, but does not directly involve any physical measurement.
+                <cite>https://en.wikipedia.org/wiki/Physical_constant</cite>
+                </blockquote>
+
+                <p>There are two parts in this project:</p>
+                <li class="tab">
+                    <b>constant</b>: a module including physics constant;
+                </li>
+                <li class="tab">
+                    <b>conversion</b>: a module doing unit conversion.
+                </li>
+
+                <p>This project is open source in my GitHub repository. <a href="https://github.com/JackRBlack/physical-constant" target="_blank">Here is the source code.</a></p>
+
+                <h2 style="font-family:courier;">Module: constant</h2>
+
+                <p>The <b>constant</b> module will be organized in such manner:</p>
+                
+                <pre class="prettyprint lang-py">
+
+                VAR = value # <symbol> [unit] {relative standard uncertainty} <explanation>
+                </pre>
+                
+                <p>where the value is refered to Wikipedia page <a href="https://en.wikipedia.org/wiki/Physical_constant">physical constant</a>.</p>
+
+                <h2 style="font-family:courier;">Module: conversion</h2>
+
+                <p>The <b>conversion</b> module will be organized in such manner:</p>
+
+                <pre class="prettyprint lang-py">
+
+                def UNITA_2_UNITB(varA):
+                    '''
+                        description
+                    '''
+                    {conversion program}
+                    return varB
+                </pre>
+
+                <p>where <code>varA</code> is a value in <code>UNITA</code> and <code>varB</code> is a value in <code>UNITB</code>.</p>
+
+                <hr>
+                <p style="color:MediumSeaGreen">Written & published @Peking University, 11:14 AM (UTC+08:00)</p>
+
+                <hr>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">See All Projects</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
