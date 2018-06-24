@@ -75,9 +75,9 @@
 
                 <center><code>adb shell settings put global policy_control immersive.navigation=*</code></center>
 
-                <p>有时对于某些应用我们并没有沉浸的企图，这时需要对它们给出例外。例如以下代码分别对我的手机的桌面、相机、相册、天气等4个app做出了沉浸取消的例外。其中相机取消沉浸是因为沉浸后相机界面无法直接退出，而另外三个app则是因为不沉浸更加美观。显然，只需要知道对应app的包名就可以轻松对任意app进行这种操作。</p>
+                <p>有时对于某些应用我们并没有沉浸的企图，这时需要对它们给出例外。例如以下代码分别对我的手机的桌面、相机、相册、天气、ssrr等5个app做出了沉浸取消的例外。其中相机取消沉浸是因为沉浸后相机界面无法直接退出，ssrr取消沉浸是因为强制沉浸后再选择 Route 时会出错。另外三个app则是因为不沉浸更加美观。显然，只需要知道对应app的包名就可以轻松对任意app进行这种操作。</p>
 
-                <center><code>adb shell settings put global policy_control immersive.navigation=apps,-com.sonyericsson.home,-com.sonyericsson.android.camera,-com.sonyericsson.album,-com.sonymobile.xperiaweather</code></center>
+                <center><code>adb shell settings put global policy_control immersive.navigation=apps,-com.sonyericsson.home,-com.sonyericsson.android.camera,-com.sonyericsson.album,-com.sonymobile.xperiaweather,-in.zhaoj.shadowsocksrr</code></center>
 
                 <p>如果只想对某几个app做出沉浸修改，我猜想只需要这个命令（但我没有测试）：</p>
 
